@@ -1,0 +1,69 @@
+package com.Allryojo.arj.ex;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+public class St_Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 인증키 (개인이 받아와야함)
+    	String key = "4c0414d3184caceca99cfc2f08030134a5645e4d";
+
+    	// 파싱한 데이터를 저장할 변수
+    	String result = "";
+
+    	try {
+
+    		URL url = new URL("http://api.e-stat.go.jp/rest/3.0/app/json/getStatsData?appId="
+    				+ key + "&lang=J&statsDataId=0003448237&metaGetFlg=Y&cntGetFlg=N&explanationGetFlg=Y&annotationGetFlg=Y&sectionHeaderFlg=1&replaceSpChars=0");
+
+    		BufferedReader bf;
+
+    		bf = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
+
+    		result = bf.readLine();
+
+        	JSONParser jsonParser = new JSONParser();
+        	JSONObject jsonObject = (JSONObject)jsonParser.parse(result);
+        	JSONObject statsData = (JSONObject)jsonObject.get("GET_STATS_DATA");
+        	JSONObject statisticalData = (JSONObject)statsData.get("STATISTICAL_DATA");
+
+        	JSONObject classInf = (JSONObject)statisticalData.get("CLASS_INF");
+        	JSONArray classObj = (JSONArray)classInf.get("CLASS_OBJ");
+        	
+        	JSONObject dataInf = (JSONObject)statisticalData.get("DATA_INF");
+        	JSONArray value = (JSONArray)dataInf.get("VALUE");
+        	
+//        	for (int i = 0; i < classObj.size(); i++) {
+//        		System.out.println("id : " + classObj.get(i));
+//				
+//			}
+//        		System.out.println();
+        	
+        	
+        		System.out.println();
+        		for (int i = 0; i < value.size(); i++) {
+        			Map<String, Object> getValue = (Map<String, Object>) value.get(i);
+        			
+        			if (getValue.get("@time").equals("1701") && getValue.get("@cat03").equals("002") && getValue.get("@cat02").equals("01000")) {
+        				System.out.println("2022 : " + getValue.get("@time") 
+        											+ " 지역 : "+ getValue.get("@area")
+        											+ " 인구수 : " + Integer.valueOf((String) getValue.get("$")) * 1000);
+					}
+        		}
+
+
+    	}catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    }
+
+}
