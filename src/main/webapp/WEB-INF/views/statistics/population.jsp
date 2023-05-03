@@ -1,30 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%-- <%@ page import="com.Allryojo.arj.service.StatisticsService" %> --%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
- <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	
-    <title>Statistics</title>
-    
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-	
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <!-- <script type="module" src="./index.js"></script> -->
-    
- <!--    <script>
- // Create a script tag and set the USGS URL as the source.
-    var script = document.createElement('script');
 
-    script.src = 'http://api.e-stat.go.jp/rest/3.0/app/json/getStatsData?appId=4c0414d3184caceca99cfc2f08030134a5645e4d&lang=J&statsDataId=0003448237&metaGetFlg=Y&cntGetFlg=N&explanationGetFlg=Y&annotationGetFlg=Y&sectionHeaderFlg=1&replaceSpChars=0';
-    document.getElementsByTagName('head')[0].appendChild(script);
-    </script> -->
-    <script>
+<%@ include file="PageDesign.jsp"%>
+
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<title>Statistics</title>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+<!-- <link rel="stylesheet" type="text/css" href="./style.css" /> -->
+
+<script>
     
  // This example requires the Visualization library. Include the libraries=visualization
  // parameter when you first load the API. For example:
@@ -34,7 +29,6 @@
  function initMap() {
    map = new google.maps.Map(document.getElementById("map"), {
      zoom: 5,
-     <!--center: { lat: 37.775, lng: -122.434 },-->
      center: { lat: 35.673709534547484, lng: 139.77656001199605 },  
      mapTypeId: "satellite",
    });
@@ -151,78 +145,126 @@
  window.initMap = initMap;
     
     </script>
-    
-    
-    
-    
-    
-    <style>
-    
-    /* 
+
+
+	
+
+ <style>
+
+/* 
  * Always set the map height explicitly to define the size of the div element
  * that contains the map. 
  */
 #map {
-  height: 100%;
+	height: 50%;
+	width: 45%%;
 }
 
 /* 
  * Optional: Makes the sample page fill the window. 
  */
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%
 }
 
 #floating-panel {
-  position: absolute;
-  top: 10px;
-  left: 25%;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
-  text-align: center;
-  font-family: "Roboto", "sans-serif";
-  line-height: 30px;
-  padding-left: 10px;
+	/* position: absolute; */
+	top: 10px;
+	left: 25%;
+	z-index: 5;
+	background-color: #fff;
+	padding: 5px;
+	border: 1px solid #999;
+	text-align: center;
+	font-family: "Roboto", "sans-serif";
+	line-height: 30px;
+	padding-left: 10px;
 }
 
 #floating-panel {
-  background-color: #fff;
-  border: 1px solid #999;
-  left: 25%;
-  padding: 5px;
-  position: absolute;
-  top: 10px;
-  z-index: 5;
+	width: 50% background-color: #fff;
+	border: 1px solid #999;
+	left: 25%;
+	padding: 5px;
+	/* position: absolute; */
+	top: 10px;
+	z-index: 5;
+	
+	float: right;
+	margin-right: 10%;
 }
-    
-    </style>
-    
-    
-  </head>
-  <body>
-    <div id="floating-panel">
-      <button id="toggle-heatmap">Toggle Heatmap</button>
-      <button id="change-gradient">Change gradient</button>
-      <button id="change-radius">Change radius</button>
-      <button id="change-opacity">Change opacity</button>
-    </div>
-    <div id="map"></div>
 
-    <!-- 
+ #map_box {
+	height: 78%;
+	width: 100%;
+}
+
+#map {
+	width: 50%;
+	float: right;
+	margin-right: 10%;
+	margin-top: 10%;  
+}
+
+
+select {
+    text-align: center;
+    float: left;
+    margin-left: 15%;
+    margin-top: 20%;
+}
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+	<%@ include file="header.jsp"%>
+
+
+		<div id = "map_box">
+		<div id="map"></div>
+		<select name = "statSelect" onchange="if(this.value) location.href=(this.value)">
+			<option value="localhost:8282/statistics/population">population</option>
+			<option>hospital</option>
+		</select>
+		
+		
+		<div id="floating-panel">
+			<button id="toggle-heatmap">Toggle Heatmap</button>
+			<button id="change-gradient">Change gradient</button>
+			<button id="change-radius">Change radius</button>
+			<button id="change-opacity">Change opacity</button>
+		</div>
+
+
+		<!-- 
       The `defer` attribute causes the callback to execute after the full HTML
       document has been parsed. For non-blocking uses, avoiding race conditions,
       and consistent behavior across browsers, consider loading using Promises.
       See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
       for more information.
       -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDITpFD_wRklv894AK6xKg0qXmNvc2YtnI&callback=initMap&libraries=visualization&v=weekly"
-      defer
-    ></script>
-  </body>
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDITpFD_wRklv894AK6xKg0qXmNvc2YtnI&callback=initMap&libraries=visualization&v=weekly"
+			defer></script>
+
+		</div>
+		
+		
+	<%@ include file="footer.jsp"%>
+	<!-- Bootstrap BUNDLE -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+
+</body>
 </html>
