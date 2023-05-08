@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.Allryojo.arj.vo.HospitalVO;
 import com.Allryojo.arj.vo.PopulationVO;
 
 @Mapper
 public interface StatisticsMapper {
 	public List<PopulationVO> getPopulationList();
+	public List<HospitalVO> getHospitalList();
 }

@@ -12,6 +12,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Repository;
 
+import com.Allryojo.arj.vo.HospitalVO;
 import com.Allryojo.arj.vo.PopulationVO;
 
 import lombok.extern.slf4j.Slf4j;
@@ -27,6 +28,7 @@ public class StatisticsDAO {
 	// 파싱한 데이터를 저장할 변수
 	private String result = "";
 
+	
 	
 	public List<PopulationVO> population(){
 			List<PopulationVO> populations = new ArrayList<PopulationVO>();
@@ -56,11 +58,11 @@ public class StatisticsDAO {
     	JSONObject dataInf = (JSONObject)statisticalData.get("DATA_INF");
     	JSONArray value = (JSONArray)dataInf.get("VALUE");
     	
-    	
+    	Map<String, Object> getValue ;
     	
     		System.out.println();
     		for (int i = 0; i < value.size(); i++) {
-    			Map<String, Object> getValue = (Map<String, Object>) value.get(i);
+    			getValue = (Map<String, Object>) value.get(i);
     			
     			//condition : time = 2022 , cat03 = only japanese , cat02 = all ages
     			if (getValue.get("@time").equals("1701") && getValue.get("@cat03").equals("002") && getValue.get("@cat02").equals("01000") && getValue.get("@cat01").equals("000")) {
@@ -94,4 +96,66 @@ public class StatisticsDAO {
 	}
 		return populations;
 	}
+	
+	
+	
+	public List<HospitalVO> hospital(){
+		List<HospitalVO> hospitals = new ArrayList<HospitalVO>();
+	try {
+
+	//e-stat page
+	URL url = new URL("http://api.e-stat.go.jp/rest/3.0/app/json/getStatsData?appId="
+			+ key + "&lang=J&statsDataId=0002013727&metaGetFlg=Y&cntGetFlg=N&explanationGetFlg=Y&annotationGetFlg=Y&sectionHeaderFlg=1&replaceSpChars=0");
+	
+	//JSON parsing
+	BufferedReader bf;
+
+	bf = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
+
+	result = bf.readLine();
+
+	JSONParser jsonParser = new JSONParser();
+	JSONObject jsonObject = (JSONObject)jsonParser.parse(result);
+	JSONObject statsData = (JSONObject)jsonObject.get("GET_STATS_DATA");
+	JSONObject statisticalData = (JSONObject)statsData.get("STATISTICAL_DATA");
+
+	//code number information
+	JSONObject classInf = (JSONObject)statisticalData.get("CLASS_INF");
+	JSONArray classObj = (JSONArray)classInf.get("CLASS_OBJ");
+	
+	//json data
+	JSONObject dataInf = (JSONObject)statisticalData.get("DATA_INF");
+	JSONArray value = (JSONArray)dataInf.get("VALUE");
+	
+	Map<String, Object> getValue ;
+		System.out.println();
+		for (int i = 0; i < value.size(); i++) {
+			getValue = (Map<String, Object>) value.get(i);
+			
+			if (getValue.get("@cat01").equals("1")) {
+				String tab = (String) getValue.get("@tab"); //tabular item = hospital
+				String bedType = (String) getValue.get("@cat01"); //000 = all , 001 = male , 002 = female
+				String area = (String) getValue.get("@cat02"); 
+				String time = (String) getValue.get("@time"); //1601 = 2020.10.01, 1301 = 2021.10.01, 1701 = 2022.10.01
+				int hospital = Integer.parseInt(String.valueOf(getValue.get("$"))); //population
+				
+				
+				HospitalVO hVO = new HospitalVO(tab, bedType, area, time, hospital);  
+				hospitals.add(hVO);
+				
+				System.out.println(hospitals.get(i));
+				
+			
+			}
+		}
+		
+
+}catch(Exception e) {
+	e.printStackTrace();
+}
+	return hospitals;
+}
+
+	
+	
 }

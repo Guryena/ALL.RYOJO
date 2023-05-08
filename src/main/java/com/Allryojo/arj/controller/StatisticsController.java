@@ -36,4 +36,18 @@ public class StatisticsController {
 		return "/statistics/population";
 	}
 	
+	@GetMapping("/hospital")
+	public String veiw_hospital(Model model) {
+		log.info("veiw_hospital()...");
+		System.out.println("veiw_hospital()...");
+		
+		model.addAttribute("stat", statisticsService.getHospitalList()); //search "stat" in population.jsp, input function
+		
+		System.out.println(statisticsService.getHospitalList().size());
+		
+		
+		
+		return "/statistics/hospital";
+	}
+	
 }

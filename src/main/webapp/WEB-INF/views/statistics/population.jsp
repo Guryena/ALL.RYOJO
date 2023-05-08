@@ -7,13 +7,13 @@
 <head>
 <meta charset="UTF-8">
 
-<%@ include file="PageDesign.jsp"%>
+<%@ include file="../PageDesign.jsp"%>
 
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<title>Statistics</title>
+<title>Population Stat</title>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
@@ -88,8 +88,7 @@
  // Heatmap data: 500 Points
  function getPoints() {
    return [
-     /* {location: new google.maps.LatLng(43.32084098779674, 141.27681270535223), weight: 5140000}, //Hokkaido Prefecture */
-     {location: new google.maps.LatLng(43.32084098779674, 141.27681270535223),  weight: ${stat.get(1).getPopulation()}},
+     {location: new google.maps.LatLng(43.32084098779674, 141.27681270535223),  weight: ${stat.get(1).getPopulation()}},//Hokkaido Prefecture
      {location: new google.maps.LatLng(40.82850553619714, 140.75265094281292), weight: ${stat.get(2).getPopulation()}}, //Aomori Prefecture
      {location: new google.maps.LatLng(39.793367355861676, 141.20895205068533), weight: ${stat.get(3).getPopulation()}}, //Iwate Prefecture
      {location: new google.maps.LatLng(38.29354187354139, 140.8660980319711), weight: ${stat.get(4).getPopulation()}}, //Miyagi Prefecture
@@ -102,7 +101,6 @@
      {location: new google.maps.LatLng(35.88792280455887, 139.64540162414193), weight: ${stat.get(11).getPopulation()}}, //Saitama Prefecture
      {location: new google.maps.LatLng(35.631901916212726, 140.1077197746091), weight: ${stat.get(12).getPopulation()}}, //Chiba Prefecture
      
-     /* {location: new google.maps.LatLng(35.711966149622384, 139.77445494942165), weight: 13443000}, //Tokyo Metropolis */
      {location: new google.maps.LatLng(35.711966149622384, 139.77445494942165), weight: ${stat.get(13).getPopulation()}}, //Tokyo Metropolis
      
      {location: new google.maps.LatLng(35.56468320507183, 139.6929515093404), weight: ${stat.get(14).getPopulation()}}, //KanaGawa Prefecture
@@ -204,6 +202,7 @@ html, body {
 
 #map {
 	width: 50%;
+	height: 60%;
 	float: right;
 	margin-right: 10%;
 	margin-top: 10%;  
@@ -226,14 +225,15 @@ select {
 
 <body>
 
-	<%@ include file="header.jsp"%>
-
+	<%@ include file="../header.jsp"%>
+		
 
 		<div id = "map_box">
 		<div id="map"></div>
 		<select name = "statSelect" onchange="if(this.value) location.href=(this.value)">
-			<option value="localhost:8282/statistics/population">population</option>
-			<option>hospital</option>
+		<option>Select</option>
+			<option value="http://localhost:8282/statistics/population">population</option>
+			<option value="http://localhost:8282/statistics/hospital">hospital</option>
 		</select>
 		
 		
@@ -259,7 +259,7 @@ select {
 		</div>
 		
 		
-	<%@ include file="footer.jsp"%>
+	<%@ include file="../footer.jsp"%>
 	<!-- Bootstrap BUNDLE -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
