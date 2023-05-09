@@ -17,4 +17,11 @@ public class TravelController {
 	
 		return "travel/travel_main";
 	}
+	
+	@GetMapping("/hokkaido")
+	public String hokkaido() {
+		log.info("hokkaido()..");
+		
+		return "travel/hokkaido";
+	}
 }
