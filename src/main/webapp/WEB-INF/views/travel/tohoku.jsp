@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>北海道</title>
+<title>東北</title>
 <link rel="stylesheet" href="/css/travel_region.css">
 
 </head>
@@ -13,7 +13,9 @@
 		<%@ include file="../header.jsp"%>
 		<div class="container">
 		<div id="pageTitle">
-			<h2 id="hokkaidoTitle" class="mainTitle">北海道</h2>
+			<h2 class="mainTitle">東北</h2>
+			<p id="tohokuTitle">青森　山形　宮城</p>
+			<p>秋田　岩手　福島</p>
 		</div>
 			<main>
 				<div id="checkBox">

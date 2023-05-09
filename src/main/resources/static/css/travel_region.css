@@ -1,0 +1,49 @@
+@charset "EUC-KR";
+main {
+	display: flex;
+	justify-content: space-between;
+}
+
+#checkBox {
+	width: 50%;
+	margin: 100px 0 160px 0;
+}
+
+.categori {
+	width: 20px;
+	height: 20px;
+}
+
+label {
+	font-size: 1.3em;
+	margin: 3%;
+}
+
+#pageTitle {
+	text-align: center;
+	margin: 30px 0;
+}
+
+.mainTitle {
+	font-weight: bold;
+}
+
+.subTitle {
+	font-size
+}
+#googleMap {
+	width: 500px;
+	height: 500px;
+}
+
+#hokkaidoTitle {
+	color: #2aab39;
+}
+
+#tohokuTitle {
+	color: #f8d939;
+}
+
+#kantoTitle {
+	color: #00caff;
+}

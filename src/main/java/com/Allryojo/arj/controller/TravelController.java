@@ -24,4 +24,18 @@ public class TravelController {
 		
 		return "travel/hokkaido";
 	}
+	
+	@GetMapping("/tohoku")
+	public String tohoku() {
+		log.info("tohoku()..");
+		
+		return "travel/tohoku";
+	}
+	
+	@GetMapping("/kanto")
+	public String kanto() {
+		log.info("kanto()..");
+		
+		return "travel/kanto";
+	}
 }
