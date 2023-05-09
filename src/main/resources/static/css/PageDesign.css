@@ -1,0 +1,56 @@
+@charset "EUC-KR";
+
+	.logo {
+        width: 15%;
+        height: 15%;
+        text-align: center;
+    }
+
+    header {
+        text-align: center;
+    }
+
+	nav {
+		overflow: hidden;
+	
+	}
+
+    @font-face {
+        font-family: 'S-CoreDream-3Light';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'S-CoreDream-3Light';
+    }
+
+    .menu {
+        width: 25%;
+        background-color: black;
+        color: white;
+        text-align: center;
+        float: left;
+    }
+
+    p {
+        margin: 10px;
+    }
+
+    [class*=menu]:hover {
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+    }
+
+
+
+    [class*=foot] {
+        width: 100%;
+        text-align: center;
+        background-color: gray;
+        color: white;
+    
+    }

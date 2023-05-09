@@ -6,18 +6,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
-<%@ include file="../PageDesign.jsp"%>
+<!-- Bootstrap css -->
+<link href="/css/PageDesign.css" rel="stylesheet">
+<!-- statistics css -->
+<link href="/css/statisticsCSS/statistics.css" rel="stylesheet">
 
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+
 <title>Hospital Stat</title>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-<!-- <link rel="stylesheet" type="text/css" href="./style.css" /> -->
 
 <script>
     
@@ -147,76 +148,6 @@
 
 
 
-<style>
-
-/* 
- * Always set the map height explicitly to define the size of the div element
- * that contains the map. 
- */
-#map {
-	height: 50%;
-	width: 45%%;
-}
-
-/* 
- * Optional: Makes the sample page fill the window. 
- */
-html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	width: 100%
-}
-
-#floating-panel {
-	/* position: absolute; */
-	top: 10px;
-	left: 25%;
-	z-index: 5;
-	background-color: #fff;
-	padding: 5px;
-	border: 1px solid #999;
-	text-align: center;
-	font-family: "Roboto", "sans-serif";
-	line-height: 30px;
-	padding-left: 10px;
-}
-
-#floating-panel {
-	width: 50% background-color: #fff;
-	border: 1px solid #999;
-	left: 25%;
-	padding: 5px;
-	/* position: absolute; */
-	top: 10px;
-	z-index: 5;
-	
-	float: right;
-	margin-right: 10%;
-}
-
- #map_box {
-	height: 78%;
-	width: 100%;
-}
-
-#map {
-	width: 50%;
-	height: 60%;
-	float: right;
-	margin-right: 10%;
-	margin-top: 10%;  
-}
-
-
-select {
-    text-align: center;
-    float: left;
-    margin-left: 15%;
-    margin-top: 20%;
-}
-
-</style>
 
 
 </head>
@@ -227,36 +158,45 @@ select {
 
 	<%@ include file="../header.jsp"%>
 
-		<div id="map_box">
-			<div id="map"></div>
-			<select name="statSelect"
-				onchange="if(this.value) location.href=(this.value)">
-				<option>Select</option>
-				<option value="http://localhost:8282/statistics/population">population</option>
-				<option value="http://loaclhost:8282/statistics/hospital">hospital</option>
-			</select>
+	<div class="container">
+		<div id="pageTitle">
+			<h2>病院統計</h2>
+		</div>
+		<main>
+			<div id="select">
+				<div id="selectBox">
+					<select name="statSelect"
+						onchange="if(this.value) location.href=(this.value)">
+						<option>Select</option>
+						<option value="http://localhost:8282/arj/statistics/population">population</option>
+						<option value="http://loaclhost:8282/arj/statistics/hospital">hospital</option>
+					</select>
+				</div>
 
-
-			<div id="floating-panel">
-				<button id="toggle-heatmap">Toggle Heatmap</button>
-				<button id="change-gradient">Change gradient</button>
-				<button id="change-radius">Change radius</button>
-				<button id="change-opacity">Change opacity</button>
+				<div id="floating-panel">
+					<button id="toggle-heatmap">Toggle Heatmap</button>
+					<button id="change-gradient">Change gradient</button>
+					<button id="change-radius">Change radius</button>
+					<button id="change-opacity">Change opacity</button>
+				</div>
 			</div>
 
+			<div id="map"></div>
+		</main>
 
-			<!-- 
+
+		<!-- 
       The `defer` attribute causes the callback to execute after the full HTML
       document has been parsed. For non-blocking uses, avoiding race conditions,
       and consistent behavior across browsers, consider loading using Promises.
       See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
       for more information.
       -->
-			<script
-				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDITpFD_wRklv894AK6xKg0qXmNvc2YtnI&callback=initMap&libraries=visualization&v=weekly"
-				defer></script>
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDITpFD_wRklv894AK6xKg0qXmNvc2YtnI&callback=initMap&libraries=visualization&v=weekly"
+			defer></script>
 
-		 </div>
+	</div>
 
 
 	<%@ include file="../footer.jsp"%>

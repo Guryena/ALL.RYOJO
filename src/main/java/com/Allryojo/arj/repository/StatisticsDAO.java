@@ -143,8 +143,6 @@ public class StatisticsDAO {
 				HospitalVO hVO = new HospitalVO(tab, bedType, area, time, hospital);  
 				hospitals.add(hVO);
 				
-				System.out.println(hospitals.get(i));
-				
 			
 			}
 		}

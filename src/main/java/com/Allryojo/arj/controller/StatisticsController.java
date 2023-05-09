@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
-@RequestMapping("/statistics")
+@RequestMapping("/arj")
 @RequiredArgsConstructor
 public class StatisticsController {
 	
@@ -22,28 +22,26 @@ public class StatisticsController {
 	private StatisticsService statisticsService;
 	
 	
-	@GetMapping("/population")
+	@GetMapping("/statistics/population")
 	public String veiw_population(Model model) {
 		log.info("veiw_population()...");
 		System.out.println("veiw_population()...");
 		
 		model.addAttribute("stat", statisticsService.getPopulationList()); //search "stat" in population.jsp, input function
 		
-		System.out.println(statisticsService.getPopulationList().size());
 		
 		
 		
 		return "/statistics/population";
 	}
 	
-	@GetMapping("/hospital")
+	@GetMapping("/statistics/hospital")
 	public String veiw_hospital(Model model) {
 		log.info("veiw_hospital()...");
 		System.out.println("veiw_hospital()...");
 		
 		model.addAttribute("stat", statisticsService.getHospitalList()); //search "stat" in population.jsp, input function
 		
-		System.out.println(statisticsService.getHospitalList().size());
 		
 		
 		
