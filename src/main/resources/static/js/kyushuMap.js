@@ -6,8 +6,8 @@
 //<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 function initAutocomplete() {
  const map = new google.maps.Map(document.getElementById("map"), {
-   center: { lat: 38.827975027264, lng: 140.53826556883155 },
-   zoom: 6.8,
+   center: { lat: 32.830359411259046, lng: 131.0739703719256 },
+   zoom: 7.7,
    mapTypeId: "roadmap",
  });
  // Create the search box and link it to the UI element.

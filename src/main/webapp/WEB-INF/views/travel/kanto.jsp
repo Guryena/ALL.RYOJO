@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>関東</title>
 <link rel="stylesheet" href="/css/travel_region.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 </head>
 
@@ -19,11 +20,11 @@
 		</div>
 			<main>
 				<div id="checkBox">
-					<label><input type="checkbox" id="shopping" class="categori" value="shopping">ショッピング</label><br>
-					<label><input type="checkbox" id="cafe" class="categori" value="cafe">カフェ</label><br>
-					<label><input type="checkbox" id="sightseeing" class="categori" value="sightseeing">観光スポット</label><br>
-					<label><input type="checkbox" id="hotel" class="categori" value="hotel">ホテル</label><br>
-					<label><input type="checkbox" id="station" class="categori" value="station">駅</label>
+					<label><input type="checkbox" id="shopping" name="categori" value="ショッピング" onclick="getCheckboxValue(event)">ショッピング</label><br>
+					<label><input type="checkbox" id="cafe" name="categori" value="カフェ" onclick="getCheckboxValue(event)">カフェ</label><br>
+					<label><input type="checkbox" id="sightseeing" name="categori" value="観光スポット" onclick="getCheckboxValue(event)">観光スポット</label><br>
+					<label><input type="checkbox" id="hotel" name="categori" value="ホテル" onclick="getCheckboxValue(event)">ホテル</label><br>
+					<label><input type="checkbox" id="station" name="categori" value="駅" onclick="getCheckboxValue(event)">駅</label>
 				</div>
 		
 				<div id="googleMap">

@@ -9,7 +9,7 @@ main {
 	margin: 100px 0 100px 0;
 }
 
-.categori {
+[name="categori"] {
 	width: 20px;
 	height: 20px;
 }
