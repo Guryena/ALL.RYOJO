@@ -6,7 +6,7 @@ main {
 
 #checkBox {
 	width: 50%;
-	margin: 100px 0 160px 0;
+	margin: 100px 0 100px 0;
 }
 
 .categori {
@@ -21,7 +21,7 @@ label {
 
 #pageTitle {
 	text-align: center;
-	margin: 30px 0;
+	margin: 25px 0;
 }
 
 .mainTitle {
@@ -46,4 +46,23 @@ label {
 
 #kantoTitle {
 	color: #00caff;
+}
+#chubuTitle {
+	color: #2ca6e0;
+}
+#kinkiTitle {
+	color: #ff9fd4;
+}
+#chugokuTitle {
+	color: #97c932;
+}
+
+#sikokuTitle {
+	color: #e95711;
+}
+#kyushuTitle {
+	color: #d6e20e;
+}
+#okinawaTitle {
+	color: #f29600;
 }

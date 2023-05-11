@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>東北</title>
+<title>関東</title>
 <link rel="stylesheet" href="/css/travel_region.css">
 
 </head>
@@ -27,7 +27,7 @@
 				</div>
 		
 				<div id="googleMap">
-					<%@ include file="kantoMap.jsp" %>
+					<%@ include file="googlemap/kantoMap.jsp" %>
 				</div>
 			</main>
 		</div>

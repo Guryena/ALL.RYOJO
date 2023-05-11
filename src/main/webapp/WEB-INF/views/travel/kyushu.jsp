@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>東北</title>
+<title>九州</title>
 <link rel="stylesheet" href="/css/travel_region.css">
 
 </head>
@@ -13,9 +13,9 @@
 		<%@ include file="../header.jsp"%>
 		<div class="container">
 		<div id="pageTitle">
-			<h2 class="mainTitle">東北地方</h2>
-			<p id="tohokuTitle">青森　山形　宮城</p>
-			<p>秋田　岩手　福島</p>
+			<h2 class="mainTitle">九州地方</h2>
+			<p id="kyushuTitle">福岡　大分　長崎</p>
+			<p>佐賀　熊本　宮崎　鹿児島</p>
 		</div>
 			<main>
 				<div id="checkBox">
@@ -27,7 +27,7 @@
 				</div>
 		
 				<div id="googleMap">
-					<%@ include file="googlemap/tohokuMap.jsp" %>
+					<%@ include file="googlemap/kyushuMap.jsp" %>
 				</div>
 			</main>
 		</div>

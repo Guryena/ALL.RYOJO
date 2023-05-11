@@ -38,4 +38,48 @@ public class TravelController {
 		
 		return "travel/kanto";
 	}
+	
+	@GetMapping("/chubu")
+	public String chubu() {
+		log.info("chubu()..");
+		
+		return "travel/chubu";
+	}
+	
+	@GetMapping("/kinki")
+	public String kinki() {
+		log.info("kinki()..");
+		
+		return "travel/kinki";
+	}
+	
+	@GetMapping("/chugoku")
+	public String chugoku() {
+		log.info("chugoku()..");
+		
+		return "travel/chugoku";
+	}
+	
+	@GetMapping("/sikoku")
+	public String sikoku() {
+		log.info("sikoku()..");
+		
+		return "travel/sikoku";
+	}
+	
+	@GetMapping("/kyushu")
+	public String kyushu() {
+		log.info("kyushu()..");
+		
+		return "travel/kyushu";
+	}
+	
+	@GetMapping("/okinawa")
+	public String okinawa() {
+		log.info("okinawa()..");
+		
+		return "travel/okinawa";
+	}
+	
+	
 }

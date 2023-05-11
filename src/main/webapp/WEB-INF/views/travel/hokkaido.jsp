@@ -25,7 +25,7 @@
 				</div>
 		
 				<div id="googleMap">
-					<%@ include file="index.jsp" %>
+					<%@ include file="googlemap/hokkaidoMap.jsp" %>
 				</div>
 			</main>
 		</div>
