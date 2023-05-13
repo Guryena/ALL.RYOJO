@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.Allryojo.arj.mapper.BoardMapper">
+
+	<select id="getList"
+		resultType="com.Allryojo.arj.vo.BoardListVO">
+  
+  <![CDATA[
+ select b_no, b_title, u_nickname, b_time, b_hit from users,board where users.u_id = board.u_id
+  ]]>
+
+	</select>
+
+	<select id="read"
+		resultType="com.Allryojo.arj.vo.BoardContentVO">
+  
+  <![CDATA[
+   select u_nickname,b_no, b_title, b_content, (to_char(b_time,'yy/mm/dd hh:mi:ss'))as b_time
+   from users, board where users.u_id = board.u_id and board.b_no = #{bno}
+
+ ]]>
+
+
+	</select>
+
+	<select id="readComment"
+		resultType="com.Allryojo.arj.vo.BoardContentVO">
+  
+  <![CDATA[
+ select a.u_nickname, b.c_content, (to_char(b.c_time, 'yy/mm/dd hh:mi:ss'))as c_time ,b_no 
+from users a, comments b where a.u_id = b.u_id and b.b_no= #{bno} order by c_time
+ ]]>
+
+
+	</select>
+
+	<insert id="insertComment">
+  
+  <![CDATA[
+  insert into comments (c_no, c_time,c_content, b_no,u_id) 
+  values (comments_c_no_seq.nextval, sysdate, #{c_content},#{b_no},'id')
+ ]]>
+
+	</insert>
+
+	<update id="update">
+	
+	 <![CDATA[
+  	 update board set b_title=#{b_title}, b_content = #{b_content}
+  	where b_no=#{b_no}
+
+  ]]>
+
+	</update>
+
+
+	<delete id="deleteComment">
+<![CDATA[
+  	delete from comments where b_no = #{b_no}
+  ]]>
+	</delete>
+
+	<delete id="deleteBoard">
+<![CDATA[
+  	delete from board where b_no = #{b_no}
+  	 ]]>
+	</delete>
+
+</mapper>

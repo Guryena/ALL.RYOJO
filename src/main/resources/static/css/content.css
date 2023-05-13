@@ -1,0 +1,21 @@
+@charset "UTF-8"
+
+#replyContent {
+	margin: auto;
+}
+
+.inputBox {
+	border:none;
+	
+}
+
+#mainBoard{
+	
+    border-width: 8px;	
+	
+	}
+	
+	#p{
+	text-align: center;
+	
+	}
