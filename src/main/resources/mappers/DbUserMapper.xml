@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="project.arj.db.mapper.DbLoginMapper">
+
+   <resultMap id="authMap" type="DbAuthVO">
+      <result property="a_no" column="a_no"/>
+      <result property="a_name" column="a_name"/>
+   </resultMap>
+
+   <resultMap id="dbUserMap" type="DbUserVO">
+       <result property="u_id" column="u_id"/>
+       <result property="u_pw" column="u_pw"/>
+       <result property="u_nickname" column="u_nickname"/>
+       <result property="a_no" column="a_no"/>
+       
+      <collection property="authList" resultMap="authMap"></collection>
+   </resultMap>
+   
+
+   
+   <select id="getUser" resultMap="dbUserMap">
+      select * from users,authority
+      where users.a_no = authority.a_no and users.u_id = #{u_id}
+   </select>
+   
+
+</mapper>
