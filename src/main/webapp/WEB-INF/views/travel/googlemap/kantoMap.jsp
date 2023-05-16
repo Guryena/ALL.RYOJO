@@ -6,25 +6,11 @@
     <title>Places Search Box</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 	<script src="/js/kantoMap.js"></script>	
-	<script type="text/javascript">
-	function getCheckboxValue(event){
-
-		const query = 'input[name="categori"]:checked';
-		const selectedEls = document.querySelectorAll(query);
-		
-		let result = '';
-		selectedEls.forEach((el) => {
-			result += el.value + ' ';
-		});
-		console.log(result);
-		document.getElementById("pac-input").value = result;
-	
-	}
-	</script>
+	<script type="text/javascript" src="/js/searchBox.js"></script>
   </head>
   
   
-<link rel="stylesheet" type="text/css" href="/css/TestCSS.css" />  
+<link rel="stylesheet" type="text/css" href="/css/mapDesign.css" />  
   
   
   <body>

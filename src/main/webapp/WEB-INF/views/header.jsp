@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/css/PageDesign.css">
 <header>
 
-	<img src="/img/allryojo.png" class="logo">
+	<a href="home"><img src="/img/allryojo.png" class="logo"></a>
 
 </header>
 <nav>

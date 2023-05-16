@@ -20,6 +20,7 @@
 		</div>
 			<main>
 				<div id="checkBox">
+				<p class="explain">チェック後、Search Box上でEnterしてください。</p>
 					<label><input type="checkbox" id="shopping" name="categori" value="ショッピング" onclick="getCheckboxValue(event)">ショッピング</label><br>
 					<label><input type="checkbox" id="cafe" name="categori" value="カフェ" onclick="getCheckboxValue(event)">カフェ</label><br>
 					<label><input type="checkbox" id="sightseeing" name="categori" value="観光スポット" onclick="getCheckboxValue(event)">観光スポット</label><br>

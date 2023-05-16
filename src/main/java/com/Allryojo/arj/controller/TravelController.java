@@ -81,5 +81,10 @@ public class TravelController {
 		return "travel/okinawa";
 	}
 	
+	@GetMapping("/home")
+	public String home() {
+		log.info("home()..");
+		return "home";
+	}
 	
 }

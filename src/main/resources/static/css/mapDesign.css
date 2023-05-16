@@ -64,16 +64,19 @@ body {
   font-size: 13px;
   font-weight: 300;
 }
+#pac-input[placeholder="Search Box"] {
+	width: 50%;
+	height: 40px;
+}
 
 #pac-input {
   background-color: #fff;
-  font-family: Roboto;
+  font-family: "ヒラギノ角ゴ ProN", "MSゴシック", "メイリオ", sans-serif;
   font-size: 15px;
   font-weight: 300;
   margin-left: 12px;
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
-  width: 50%;
 }
 
 #pac-input:focus {

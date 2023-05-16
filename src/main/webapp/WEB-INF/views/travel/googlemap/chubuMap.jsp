@@ -5,15 +5,13 @@
   <head>
     <title>Places Search Box</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+	<script src="/js/chubuMap.js"></script>
+	<script type="text/javascript" src="/js/searchBox.js"></script>
 
   </head>
   
   
-  
-  
-  <script src="/js/chubuMap.js"></script>
-  
-<link rel="stylesheet" type="text/css" href="/css/TestCSS.css" />  
+<link rel="stylesheet" type="text/css" href="/css/mapDesign.css" />  
   
   
   <body>

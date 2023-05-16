@@ -1,11 +1,14 @@
-@charset "EUC-KR";
+@charset "UTF-8";
 
+html {
+	margin: 0;
+}
 #note {
 	margin-bottom: 15px;
 }
 
 #note h3, #tooltip {
-	font-family: "«Ò«é«®«ÎÊÇ«´ ProN", "MS«´«·«Ã«¯", "«á«¤«ê«ª", sans-serif;
+	font-family: "ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ ProN", "MSã‚´ã‚·ãƒƒã‚¯", "ãƒ¡ã‚¤ãƒªã‚ª", sans-serif;
 }
 
 #japan {
