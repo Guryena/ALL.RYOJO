@@ -14,7 +14,7 @@ import com.Allryojo.arj.db.security.DbCustomDetailsService;
 
 @Configuration // @Component + 의미(설정할수 있는 파일)
 @EnableWebSecurity // 스프링 시큐리티 필터가 스프링 필터체인에 등록됨 = 스프링 시큐리티를 작동 시키는 파일 이라는걸 알려줌 - 스프링 한테.
-public class DbConfig extends WebSecurityConfigurerAdapter {
+public class DbConfig extends WebSecurityConfigurerAdapter {//deprecated 됨...
 
 	@Autowired
 	private DbCustomDetailsService dbCustomDetailsService;
