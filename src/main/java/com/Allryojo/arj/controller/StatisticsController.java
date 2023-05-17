@@ -21,6 +21,14 @@ public class StatisticsController {
 	@Autowired
 	private StatisticsService statisticsService;
 	
+//	@GetMapping("")
+//	public String view_home() {
+//		log.info("view_home()...");
+//		System.out.println("view_home()...");
+//		
+//		return "/home/home";
+//	}
+	
 	
 	@GetMapping("/statistics/population")
 	public String veiw_population(Model model) {
@@ -47,5 +55,6 @@ public class StatisticsController {
 		
 		return "/statistics/hospital";
 	}
+	
 	
 }

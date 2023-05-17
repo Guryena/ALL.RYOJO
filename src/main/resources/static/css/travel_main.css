@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+html {
+	margin: 0;
+}
+#note {
+	margin-bottom: 15px;
+}
+
+#note h3, #tooltip {
+	font-family: "ヒラギノ角ゴ ProN", "MSゴシック", "メイリオ", sans-serif;
+}
+
+#japan {
+	width: 50%;
+	height: 50%;
+	margin-bottom: 15px;
+}
+
+.cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+	stroke: #fff;
+	stroke-width: .6px;
+}
+
+.cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9,
+	.cls-10 {
+	fill-rule: evenodd;
+}
+
+.cls-1 {
+	fill: #f8d939;
+}
+
+.cls-2 {
+	fill: #00caff;
+}
+
+.cls-3 {
+	fill: #2aab39;
+}
+
+.cls-4 {
+	fill: #2ca6e0;
+}
+
+.cls-5 {
+	fill: #d6e20e;
+}
+
+.cls-6 {
+	fill: #ff9fd4;
+}
+
+.cls-7 {
+	fill: #e95711;
+}
+
+.cls-8 {
+	fill: #f29600;
+}
+
+.cls-9 {
+	fill: #97c932;
+}
+
+.cls-10 {
+	fill: none;
+	stroke: #040000;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: .48px;
+}
+
+#map {
+	text-align: center;
+}
+
+#hokkaido:hover {
+	transform: translateY(-5px);
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+#to-hoku:hover {
+	transform: translateY(-5px);
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+#kanto:hover {
+	transform: translateY(-5px);
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+#chu-bu:hover {
+	transform: translateY(-5px);
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+#kinki:hover {
+	transform: translateY(-5px);
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+#chu-goku:hover {
+	transform: translateY(-5px);
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+#sikoku:hover {
+	transform: translateY(-5px);
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+#kyu-shu:hover {
+	transform: translateY(-5px);
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+#okinawa:hover {
+	transform: translateY(-5px);
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+#p_to-hoku,
+#p_hokkaido,
+#p_kanto,
+#p_chu-bu,
+#p_kinki,
+#p_chu-goku,
+#p_sikoku,
+#p_kyu-shu,
+#p_okinawa {
+	display: none;
+}
+
+.p_box {
+	width: 200px;
+	position: absolute;
+	background: #f7f7f7;
+	padding: 0 1px;
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 0px 2px 2px #e6e6e6;
+}
+
+.p_box .p_title {
+	border-bottom: 1px solid #e6e6e6;
+	text-align: center;
+	margin: 0;
+	line-height: 2.5;
+	font-weight: bold;
+}
+
+#hokkaido_title {
+	border-top: 5px solid #2aab39;
+}
+
+#to-hoku_title {
+	border-top: 5px solid #f8d939;
+}
+
+#kanto_title {
+	border-top: 5px solid #00caff;
+}
+
+#chu-bu_title {
+	border-top: 5px solid #2ca6e0;
+}
+
+#kinki_title {
+	border-top: 5px solid #ff9fd4;
+}
+
+#chu-goku_title {
+	border-top: 5px solid #97c932;
+}
+
+#sikoku_title {
+	border-top: 5px solid #e95711;
+}
+
+#kyu-shu_title { 
+	border-top: 5px solid #d6e20e;
+}
+
+#okinawa_title {
+	border-top: 5px solid #f29600;
+}
+
+.p_box .p_txt {
+	padding: 15px 5px;
+}
+
+.p_box ul {
+	width: 85%;
+	margin: 0;
+	padding: 0 0 0 15%;
+	overflow: hidden;
+}
+
+.p_box ul li {
+	float: left;
+	width: 42%;
+	font-size: 0.8em;
+    list-style: none;
+	margin: 0 0 0 8%;
+} 

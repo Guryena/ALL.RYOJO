@@ -5,12 +5,12 @@
 <link rel="stylesheet" href="/css/PageDesign.css">
 <header>
 
-	<img src="/img/allryojo.png" class="logo">
+	<a href="/arj"><img src="/img/allryojo.png" class="logo"></a>
 
 </header>
 <nav>
 	<div class="container">
-		<a href="/travel/main">
+		<a href="/arj/travel">
 			<div class="menu">
 				<p>旅行</p>
 			</div>

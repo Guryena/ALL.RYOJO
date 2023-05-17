@@ -1,4 +1,4 @@
-@charset "EUC-KR";
+@charset "UTF-8";
 
 	.logo {
         width: 15%;
@@ -12,11 +12,10 @@
 
 	nav {
 		overflow: hidden;
-	
 	}
 
     @font-face {
-        font-family: 'S-CoreDream-3Light';
+        font-family: "ヒラギノ角ゴ ProN", "MSゴシック", "メイリオ", sans-serif;
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
         font-weight: normal;
         font-style: normal;
@@ -24,7 +23,7 @@
 
     body {
         margin: 0;
-        font-family: 'S-CoreDream-3Light';
+        font-family: "ヒラギノ角ゴ ProN", "MSゴシック", "メイリオ", sans-serif;
     }
 
     .menu {
@@ -33,24 +32,32 @@
         color: white;
         text-align: center;
         float: left;
+        padding: 10px;
     }
 
-    p {
-        margin: 10px;
-    }
-
+	p {
+		margin: 0;
+	}
+	
     [class*=menu]:hover {
         background-color: gray;
         color: white;
         cursor: pointer;
     }
 
+   /*  [class*=content] {
+        width: 100%;
+        background-color: white;
+        color: black;
+    } */
 
-
+ 
     [class*=foot] {
         width: 100%;
+        padding: 5px; 
         text-align: center;
         background-color: gray;
         color: white;
-    
+        margin-top: auto; 
+        bottom: 0;
     }

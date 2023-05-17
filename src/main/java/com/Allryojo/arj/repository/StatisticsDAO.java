@@ -23,7 +23,7 @@ public class StatisticsDAO {
 	
 	
 	// 인증키 (개인이 받아와야함)
-	private String key = "4c0414d3184caceca99cfc2f08030134a5645e4d";
+	private String key = "Your KEY";
 	
 	// 파싱한 데이터를 저장할 변수
 	private String result = "";

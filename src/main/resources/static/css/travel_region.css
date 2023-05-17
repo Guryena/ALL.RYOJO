@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+main {
+	display: flex;
+	justify-content: space-between;
+}
+
+#checkBox {
+	width: 50%;
+	margin: 100px 0 100px 0;
+}
+
+[name="categori"] {
+	width: 20px;
+	height: 20px;
+}
+
+label {
+	font-size: 1.3em;
+	margin: 3%;
+}
+
+#pageTitle {
+	text-align: center;
+	margin: 25px 0;
+}
+
+.mainTitle {
+	font-weight: bold;
+}
+
+
+#googleMap {
+	width: 50%;
+	height: auto;
+	margin-bottom: 25px;
+}
+
+#hokkaidoTitle {
+	color: #2aab39;
+}
+
+#tohokuTitle {
+	color: #f8d939;
+}
+
+#kantoTitle {
+	color: #00caff;
+}
+#chubuTitle {
+	color: #2ca6e0;
+}
+#kinkiTitle {
+	color: #ff9fd4;
+}
+#chugokuTitle {
+	color: #97c932;
+}
+
+#sikokuTitle {
+	color: #e95711;
+}
+#kyushuTitle {
+	color: #d6e20e;
+}
+#okinawaTitle {
+	color: #f29600;
+}
+
+.explain {
+    position: relative;
+    padding: 1rem 1rem 1rem 1rem;
+    border: 3px solid #333;
+    font-weight: bold;
+    font-size: 15px;
+    width: 80%;
+}
+
+.explain:before,
+.explain:after {
+    position: absolute;
+    top: 100%;
+    left: 50px;
+    height: 0;
+    width: 0;
+    border: solid transparent;
+    content: "";
+}
+
+.explain:before {
+    margin-left: -12px;
+    border-color: transparent;
+    border-top-color: #333;
+    border-width: 12px;
+}
+
+.explain:after {
+    margin-left: -8px;
+    border-color: transparent;
+    border-top-color: white;
+    border-width: 8px;
+}
