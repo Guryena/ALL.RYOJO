@@ -31,7 +31,7 @@
       for more information.
       -->
 <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDITpFD_wRklv894AK6xKg0qXmNvc2YtnI&callback=initAutocomplete&libraries=places&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=YourKey&callback=initMap&libraries=visualization&v=weekly"
       defer
     ></script>
   </body>
