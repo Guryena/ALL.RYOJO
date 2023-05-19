@@ -1,21 +1,66 @@
-@charset "UTF-8"
+@charset "UTF-8";
 
-#replyContent {
-	margin: auto;
+#title{
+	
+	/* text-align:center; */ 
+	margin-left: 43.5%;
+	margin-top: 3%;
+	display: inline-block;
+	width: 20.5%;
+
+	
 }
 
-.inputBox {
-	border:none;
+#count {
+	
+	text-align: center; 
+    margin-left: 13.5%;
+    color: darkgray;
+}
+
+
+ #b{
+	
+	margin-left: 6%; 
+	margin-top: 0.1%;
+	display: inline block; 
+    font-size: 16px;
+    width: 4.0%;
+    font-size: 14.5%;
+	/* display: flex; */
+} 
+
+#nav{
+	
+	/* float: left; */
 	
 }
 
-#mainBoard{
+
+.sign {
 	
-    border-width: 8px;	
+	margin-left: 5.99%;
+	font-size: 25.5%;
+	text-decoration-line: none;
 	
-	}
 	
-	#p{
-	text-align: center;
+}
+
+
+#paging {
 	
-	}
+	margin-left: 35.3%;
+	color: black;
+	text-decoration-line: none;	
+}
+
+#paging:hover{
+	
+	font-weight : 50;
+	color: red;
+}
+
+/* a:link {
+	
+	color : gray;
+} */

@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>投稿</title>
 <link rel="stylesheet" href="/css/content.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 	<%@ include file="../header.jsp"%>
@@ -64,8 +65,8 @@
 	<form action="writeComment" method="post">
 
 		<input type="hidden" name="b_no" value="${content_view.b_no}">
-
-
+		<%-- <input type="hidden" name="b_hit" value="${content_view.b_hit}">
+ --%>
 <!-- 댓글 길이 카운팅 -->
 	<script>
  function countingLength(c_content) {
@@ -115,18 +116,51 @@
 				 <span style="color: darkgray; font-size: 13.7px;">${board.u_nickname}</span> &nbsp;&nbsp;
 				 <span style="color: darkgray; font-size: 12.5px;">${board.c_time}</span><br>
 				 ${board.c_content}
-				 <!--  <button class="btns">수정</button></div>&nbsp;&nbsp;
-	            <div><button class="btns" a href="#">삭제</button></a></div>
-         		 --> 
+				   <button class="btns">수정</button>
+				   <button id="${board.c_no}" class="btn_delete">삭제</button></a></div>
+         		  
          		 </div>
 			
-		
+	
   
 	<!-- 	</table> -->
 	</c:forEach>
 </div>
 
+
+
+
 	<%@ include file="../footer.jsp"%>
 
 </body>
+
+<script type="text/javascript">
+   
+      $(document).ready(function (){
+    	  
+         $(document).on("click",".btn_delete",function(){
+        	 console.log("==================================");
+             
+        	 console.log($(this).attr("id"));
+            
+            var id = $(this).attr("id");
+            
+            $(this).parent().remove();   
+            
+            $.ajax({
+                type : "DELETE",
+                url : "${pageContext.request.contextPath}/jboard/replyDelete/" + id,
+                success: function (result) {       
+                   console.log("삭제된 수" + result);                 
+         
+                },
+                error: function (e) {
+                    console.log(e);
+                }
+            });
+            
+         });
+         
+      });
+   </script>
 </html>

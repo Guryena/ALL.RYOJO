@@ -17,25 +17,22 @@
 <body>
 <%@ include file="../header.jsp"%>
 <div class=container">
-<h2 style="text-align:center; margin-top: 6%;">全ての投稿</h2>
-<div style="text-align: center; 
-            margin-left: 13.5%;
-            color: darkgray;">**件</div>
-<nav>
-<a href="write_view" id="button" type="button" class="btn btn-primary"
-style="margin-left: 5.5%;">投稿</a> <br>
-	
+<span><h2 id = "title" >全ての投稿</h2></span>	
+<div id ="count">${pageMaker.total}件</div>
+<span><nav id = "nav">
+
+<a href="write_view" id="b" type="button" class="btn btn-primary">投稿</a><br>
 <div class = "sign">
 <%-- <sec:authorize access="isAnonymous()"> --%>
-	<a href="#희복오빠가 만든거 연동" style="margin-left: 5.5%;">Sign in</a><br>
-	<a href="#희복오빠가 만든거 연동" style="margin-left: 5.5%;">Sign up</a><br>
+	<a href="#희복오빠가 만든거 연동">Sign in</a><br>
+	<a href="#희복오빠가 만든거 연동">Sign up</a><br>
 <%-- </sec:authorize> --%>
 
 <%-- <sec:authorize access="isAuthenticated()"> --%>
-	<a href="#희복오빠가 만든거 연동" style="margin-left: 5.5%;">Logout</a><br>
+	<a href="#희복오빠가 만든거 연동" >Logout</a><br>
 <%-- </sec:authorize> --%>
 </div>
-</nav>
+</nav></span>
 </div>
 <div class=container>     
 	 <table class="table" > 
@@ -63,6 +60,24 @@ style="margin-left: 5.5%;">投稿</a> <br>
 		</c:forEach>
 		
 	</table>
+	
+	<!-- 페이징 -->
+	<div class = "container" id = "paging">
+	    <c:if test="${pageMaker.prev}">
+         <a href="list${pageMaker.makeQuery(pageMaker.startPage - 1) }">«</a> &nbsp;&nbsp; 
+      </c:if>
+
+      <c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage}" var="idx">&nbsp;&nbsp; 
+         <c:out value="${pageMaker.cri.pageNum == idx?'':''}" />  
+         <a href="list${pageMaker.makeQuery(idx)}">${idx}</a>&nbsp;
+      </c:forEach>
+      
+      <c:if test="${pageMaker.next && pageMaker.endPage > 0}"> &nbsp;
+         <a href="list${pageMaker.makeQuery(pageMaker.endPage +1) }"> » </a> &nbsp;&nbsp; 
+      </c:if> 
+	
+	
+	
 	</div>
 <%@ include file="../footer.jsp"%>
 </body>
