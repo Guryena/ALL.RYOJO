@@ -2,9 +2,9 @@
 
 #title{
 	
-	/* text-align:center; */ 
-	margin-left: 43.5%;
-	margin-top: 3%;
+	text-align:center;  
+	margin-left: 40.3%;
+	margin-top: 2.8%;
 	display: inline-block;
 	width: 20.5%;
 
@@ -14,35 +14,33 @@
 #count {
 	
 	text-align: center; 
-    margin-left: 13.5%;
+    /* margin-left: 13.5%; */
+    margin: 0 auto;
     color: darkgray;
 }
 
 
  #b{
 	
-	margin-left: 6%; 
-	margin-top: 0.1%;
 	display: inline block; 
     font-size: 16px;
-    width: 4.0%;
     font-size: 14.5%;
-	/* display: flex; */
+	display: flex;
+	text-align: center;
 } 
-
-#nav{
+ #nav{
+	display: inline-block;
+	float: left;
 	
-	/* float: left; */
-	
-}
+} 
 
 
 .sign {
 	
-	margin-left: 5.99%;
+	margin-left: 4.99%;
 	font-size: 25.5%;
 	text-decoration-line: none;
-	
+		
 	
 }
 
@@ -54,13 +52,96 @@
 	text-decoration-line: none;	
 }
 
-#paging:hover{
+/* #paging:hover{
 	
 	font-weight : 50;
 	color: red;
-}
+} */
 
 /* a:link {
 	
 	color : gray;
 } */
+
+
+#order{
+	padding-right: 10%;
+	width : 7.5%;
+}
+
+#order1{
+	
+	width : 10.8%;
+	padding-left: 1.75%
+	
+}
+
+#order2{
+	
+	width : 15.4%;
+	padding-left: 4.7%
+}
+
+#order3{
+	
+	width : 18.4%;
+	padding-left: 9.7%
+}
+
+#order4{
+	
+	width : 18.4%;
+	padding-left: 9.7%
+} 
+
+
+#nickName{
+	
+	width : 20.4%;
+	margin-left:30%;
+}
+
+#p{
+	
+	margin-left:45%;
+}
+
+/* ====내용 */
+
+#no {
+	
+	text-align:center;
+}
+
+#no1 {
+	
+	padding-left: 8.9%;
+}
+
+ #hit{
+	
+	padding-left: 3.9%;
+	width : 15%;
+	
+}
+
+#hit1{
+	
+	padding-left: 8.5%;
+	margin:0;
+} 
+/* 
+#writer {
+	
+	text-align:center;
+	
+}	 */
+
+#writer1 {
+	
+padding-left: 7.9%;
+	
+}	
+
+/* ==등록 */
+

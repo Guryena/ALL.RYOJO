@@ -13,7 +13,7 @@
 	<%@ include file="../header.jsp"%>
 
 	<div class=container style="margin: auto; 
-	margin-top: 6%;  border-width: 8px;">
+	margin-top: 2.8%;  border-width: 8px;">
 
 	<h2 id="p">投稿</h2>
       <br>
@@ -24,33 +24,33 @@
 		<!-- input타입, 체크박스 등 (얘네들만 넘어감) 넘어갈 때 name, value 값이 넘어가고 없는 애들은 안넘어감 -->
 		<input type="hidden" name="b_no" value="${content_view.b_no}">
 		<tr>
-			<td style="padding-left: 3%;">No: </td>
-			<td style="padding-left: 10%;">${content_view.b_no}</td>
+			<td id ="no" style="padding-right: 2%;">No</td>
+			<td id ="no1">${content_view.b_no}</td>
 			<!-- 전송버튼 누를 때 안넘어감 -->
 		</tr>
 
 		<tr>
-			<td style="padding-left: 0.3%; left:80px;">アクセス数</td>
-			<td style="padding-left: 9.5%;">없음</td>
+			<td id="hit">アクセス数</td>
+			<td id ="hit1">${content_view.b_hit}</td>
 		</tr>
 
 		<tr>
-			<td style="padding-left: 1.5%; left:80px;">作成者</td>
+			<td id="writer" style="padding-left: 5.0%;">作成者</td>
 <%-- 			<td><input type="text" name="u_nickname" 
 				value="${content_view.u_nickname}" style="padding-left: 9.5%; border:none;"></td>
- --%>			<td style="padding-left: 9.5%;">
+ --%>			<td id = "writer1">
 				${content_view.u_nickname}</td>
 		</tr>
 
 		<tr>
-			<td style="padding-left: 1.3%; left:80px;">タイトル</td>
-			<td><input type="text" name="b_title" style=" padding-left: 9.0%; border:none;"
+			<td id= "subject" style="padding-left: 3.3%;">タイトル</td>
+			<td><input type="text" name="b_title" style=" padding-left: 8.0%; border:none;"
 				value="${content_view.b_title}"></td>
 		</tr>
 
 		<tr>
-			<td style="padding-left: 2.3%; left:80px;">内容</td>
-			<td style="padding-left:5%"><textarea cols="100" rows="10" name="b_content"> ${content_view.b_content}</textarea></td>
+			<td style="padding-left: 5.3%; left:80px;">内容</td>
+			<td style="padding-left:5%"><textarea cols="125" rows="10" name="b_content"> ${content_view.b_content}</textarea></td>
 		</tr>
 
 		<tr>
@@ -71,7 +71,7 @@
 	<script>
  function countingLength(c_content) {
     if(c_content.value.length>1000) {
-        alert('댓글을 1000자 이하로 입력해 주세요.');
+        alert('注意：１０００字以下');
         c_content.value = c_content.value.substring(0,1000);
         c_content.focus();
     }
@@ -85,16 +85,16 @@
 		<!-- 댓글 작성 란-->
 
 		<div class=container style="margin: auto; 
-	margin-top: 6%;">
+	margin-top: 2%;">
 			<fieldset>
 				<legend class="skipinfo" style="font-size: 18px;">コメント</legend> <br>
 				<div class="cm_input">
 					<p>
 						<textarea id="replyContent" name="c_content"
-							onkeyup="countingLength(this);" cols="90" rows="2.5"
+							onkeyup="countingLength(this);" cols="98" rows="1.5"
 							placeholder="コメントを入力してください。"></textarea>
 					</p>
-					<span><button class="btns" style="margin-left:55%;">登録</button> <i id="counter">0/1000자</i></span>
+					<span><button class="btns" style="margin-left:55%;">登録</button> <i id="counter">0/1000字</i></span>
 				</div>
 			</fieldset>
 		</div>
@@ -105,27 +105,28 @@
 
 	<!--  댓글 오는 자리    -->
 
-<div class=container>
 	<c:forEach var="board" items="${reply_view}">
-
+			
+<div class=container>
+			
+		 <div>
+		 <span style="color: darkgray; font-size: 13.7px;">${board.u_nickname}</span> &nbsp;&nbsp;
+		<span style="color: darkgray; font-size: 12.5px;">${board.c_time}</span><br>
+		${board.c_content}
+		 <!--   <button class="btns">수정</button> -->
+	 <button id="${board.c_no}" class="btn_delete">削除</button></a></div>
+         		  
+       </div>
+  
+	<!--</table> -->
+	</c:forEach>
+</div>
 
 
 			
 				 
-				 <div>
-				 <span style="color: darkgray; font-size: 13.7px;">${board.u_nickname}</span> &nbsp;&nbsp;
-				 <span style="color: darkgray; font-size: 12.5px;">${board.c_time}</span><br>
-				 ${board.c_content}
-				   <button class="btns">수정</button>
-				   <button id="${board.c_no}" class="btn_delete">삭제</button></a></div>
-         		  
-         		 </div>
 			
 	
-  
-	<!-- 	</table> -->
-	</c:forEach>
-</div>
 
 
 

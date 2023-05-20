@@ -21,7 +21,7 @@
 		resultType="com.Allryojo.arj.vo.BoardContentVO">
   
   <![CDATA[
-   select u_nickname,b_no, b_title, b_content, (to_char(b_time,'yy/mm/dd hh:mi:ss'))as b_time
+   select u_nickname,b_no, b_title, b_content, (to_char(b_time,'yy/mm/dd hh:mi:ss'))as b_time, b_hit
    from users, board where users.u_id = board.u_id and board.b_no = #{bno}
 
  ]]>
@@ -91,11 +91,11 @@ from users a, comments b where a.u_id = b.u_id and b.b_no= #{bno} order by c_tim
   	 ]]>
 	</delete>
 
-<insert id="insert">
+<insert id="insert">  <!-- 시큐리티 적용되면 #{u_id} 이렇게 처리하기 -->
 	
 	 <![CDATA[
   	 insert into board (b_no, b_title, b_content, b_time,  u_id, b_hit)
-  	 values (board_b_no_seq.nextval, #{b_title},#{b_content}, sysdate, #{u_id},0)
+  	 values (board_b_no_seq.nextval, #{b_title},#{b_content}, sysdate, 'id', 0)
 
   ]]>
 
@@ -108,7 +108,7 @@ from users a, comments b where a.u_id = b.u_id and b.b_no= #{bno} order by c_tim
    </select>
  
 
-<select id="countBoard" resultType="int">
+<select id="countBoard">
       <![CDATA[
           select count(*) from board
       ]]>

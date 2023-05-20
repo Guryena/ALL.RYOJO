@@ -127,6 +127,7 @@ public class BoardController { // 클라이언트에서 처음 치고 들어올 
 	@PostMapping("/write")
 	public String write(BoardContentVO boardVO) {
 		log.info("write()..");
+		System.out.println("boardvo나옴" + boardVO);
 		int rn = boardService.register(boardVO);
 
 		return "redirect:list";

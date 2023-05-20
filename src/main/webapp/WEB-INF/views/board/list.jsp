@@ -16,12 +16,12 @@
 </head>
 <body>
 <%@ include file="../header.jsp"%>
-<div class=container">
+<div class="container col-md">
 <span><h2 id = "title" >全ての投稿</h2></span>	
 <div id ="count">${pageMaker.total}件</div>
-<span><nav id = "nav">
+<nav id = "nav">
 
-<a href="write_view" id="b" type="button" class="btn btn-primary">投稿</a><br>
+<a href="write_view" id="b" type="button" class="btn btn-primary">投稿</a>
 <div class = "sign">
 <%-- <sec:authorize access="isAnonymous()"> --%>
 	<a href="#희복오빠가 만든거 연동">Sign in</a><br>
@@ -32,30 +32,30 @@
 	<a href="#희복오빠가 만든거 연동" >Logout</a><br>
 <%-- </sec:authorize> --%>
 </div>
-</nav></span>
+</nav>
 </div>
-<div class=container>     
-	 <table class="table" > 
+<div class="container">     
+	 <table class="table"> 
 	
 		<tr>
-			<td>No</td>
-			<td>タイトル</td>
-			<td>作成者</td>
-			<td>作成日</td>
-			<td>アクセス数</td>
+			<td id ="order">No</td>
+			<td id ="order1">タイトル</td>
+			<td id ="order2">作成者</td>
+			<td id ="order3">作成日</td>
+			<td id ="order4">アクセス数</td>
 		</tr>
 
 	<table class="table table-hover"> 
     	<c:forEach var="board" items="${boards}">
 
 			<tr>
-				<td>${board.b_no}</td>
+				<td style="width : 5.4%;">${board.b_no}</td>
 					
-				<td><a href="${pageContext.request.contextPath}/jboard/content_view?b_no=${board.b_no}">
+				<td style="width : 10.4%; padding-left:5.7%;"><a href="${pageContext.request.contextPath}/jboard/content_view?b_no=${board.b_no}">
 						${board.b_title} </a></td>
-				<td>${board.u_nickname}</td>
-				<td>${board.b_time}</td>
-				<td>${board.b_hit}</td>
+				<td style="width : 10.4%; padding-left:7.62%;">${board.u_nickname}</td>
+				<td style="width : 30.4%; padding-left:14.5%;">${board.b_time}</td>
+				<td style="width : 10.4%; padding-left:1.38%;">${board.b_hit}</td>
 			</tr>
 		</c:forEach>
 		
